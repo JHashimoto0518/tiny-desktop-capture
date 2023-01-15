@@ -204,7 +204,7 @@ namespace TinyDesktopCapture {
 
             } else if (_mouseInfo.Status == MouseDragInfo.DragStaus.Complete)
             {
-                //// クリップボードに取り込む
+                // TODO: クリップボードに取り込む
                 //SetImageToClip();
                 //this.Close();
             }
@@ -237,43 +237,6 @@ namespace TinyDesktopCapture {
 
         #endregion MouseDownEventHandler
 
-        #region KeepFront
-
-        /// <summary>
-        /// 画像を前面に配置する
-        /// </summary>
-        private void KeepFront() {
-
-            //// 選択範囲確定後
-            //    this.SuspendLayout();
-
-            //    // 最前面化
-            //    this.WindowState = FormWindowState.Normal;
-
-            //    this.Hide();
-            //    this.Wait(200);
-
-            //    Rectangle rect = new Rectangle(selectedArea.Location, selectedArea.Size);
-
-            //    this.Size = rect.Size;
-            //    this.Location = rect.Location;
-
-            //    // TODO:赤枠が見えない
-            //    Image img = GetCaptureImage(new Rectangle(
-            //                                    selectedArea.Location.X - 1,
-            //                                    selectedArea.Location.Y - 1,
-            //                                    selectedArea.Size.Width + 2,
-            //                                    selectedArea.Size.Height + 2));
-            //    this.BackgroundImage = img;
-
-            //    this.Show();
-            //    this.TopMost = true;
-
-            //    this.ResumeLayout();
-
-        }
-
-        #endregion KeepFront
 
         #region コンテキストメニュー
 
@@ -317,7 +280,6 @@ namespace TinyDesktopCapture {
 
             ImageFormat format;
 
-            // TODO:Configの画像形式で変換する
             if ("png".Equals(_config.ImageType))
             {
                 format = ImageFormat.Png;
@@ -334,8 +296,6 @@ namespace TinyDesktopCapture {
             {
                 format = ImageFormat.Bmp;
             }
-
-            // TODO:画像を削除する（掲示板の方法を試してみる）
 
             string imgPath = Path.Combine(Application.StartupPath, "tempimg");
             source.Save(imgPath, format);
@@ -382,7 +342,6 @@ namespace TinyDesktopCapture {
         private Image MagnifyImage(Image img, decimal magnification) {
 
             // TODO:リファクタする
-
             float fMagnification = (float)(magnification / 100);
 
             Bitmap newImg = new Bitmap((int)(img.Width * fMagnification), (int)(img.Height * fMagnification));

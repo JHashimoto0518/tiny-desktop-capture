@@ -23,7 +23,6 @@ namespace TinyDesktopCapture {
         /// <summary>
         /// 画像の形式
         /// </summary>
-        /// public string ImageType;
         public string? ImageType;
 
         #endregion プロパティ
@@ -54,19 +53,10 @@ namespace TinyDesktopCapture {
         /// 画像形式コンボボックスを設定します。
         /// </summary>
         private void SetImageComboBox() {
-            //imageComboBox.Items.Add(new KeyValuePair<string, ImageTypeEnum>("png", ImageTypeEnum.PNG));
-            //imageComboBox.Items.Add(new KeyValuePair<string, ImageTypeEnum>("bitmap", ImageTypeEnum.Bitmap));
-            //imageComboBox.Items.Add(new KeyValuePair<string, ImageTypeEnum>("gif", ImageTypeEnum.GIF));
-            //imageComboBox.Items.Add(new KeyValuePair<string, ImageTypeEnum>("jpeg", ImageTypeEnum.JPEG));
-
-            //imageComboBox.DisplayMember = "key";
-            //imageComboBox.ValueMember = "value";
-
             imageComboBox.Items.Add("png");
             imageComboBox.Items.Add("bitmap");
             imageComboBox.Items.Add("gif");
             imageComboBox.Items.Add("jpeg");
-
         }
 
         #endregion
