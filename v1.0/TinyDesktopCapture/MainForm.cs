@@ -1,32 +1,32 @@
-using System.Drawing.Imaging;
+ï»¿using System.Drawing.Imaging;
 using System.Resources;
 using TinyDesktopCapture.Properties;
 
 namespace TinyDesktopCapture {
     public partial class MainForm : Form {
-        #region ƒtƒB[ƒ‹ƒh
+        #region ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰
 
         /// <summary>
-        /// ƒ}ƒEƒXƒhƒ‰ƒbƒOî•ñ
+        /// ãƒã‚¦ã‚¹ãƒ‰ãƒ©ãƒƒã‚°æƒ…å ±
         /// </summary>
         private MouseDragInfo _mouseInfo = new MouseDragInfo();
 
         /// <summary>
-        /// İ’è
+        /// è¨­å®š
         /// </summary>
         private Config _config = new Config();
 
-        #endregion ƒtƒB[ƒ‹ƒh
+        #endregion ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰
 
-        #region ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+        #region ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 
         /// <summary>
-        /// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+        /// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
         /// </summary>
         public MainForm() {
             InitializeComponent();
 
-            {   // ƒƒCƒ“ƒtƒH[ƒ€
+            {   // ãƒ¡ã‚¤ãƒ³ãƒ•ã‚©ãƒ¼ãƒ 
                 this.Icon = Resources.Picture;
                 this.FormBorderStyle = FormBorderStyle.None;
                 this.WindowState = FormWindowState.Maximized;
@@ -39,44 +39,44 @@ namespace TinyDesktopCapture {
                 this.MouseMove += new MouseEventHandler(MainForm_MouseMove);
             }
 
-            {   // ƒRƒ“ƒeƒLƒXƒgƒƒjƒ…[
-                this.İ’èToolStripMenuItem.Click += new EventHandler(İ’èToolStripMenuItem_Click);
+            {   // ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆãƒ¡ãƒ‹ãƒ¥ãƒ¼
+                this.è¨­å®šToolStripMenuItem.Click += new EventHandler(è¨­å®šToolStripMenuItem_Click);
                 this.CopyToClipboardToolStripMenuItem.Click += new EventHandler(CopyToClipboardToolStripMenuItem_Click);
             }
 
-            {   // İ’è‚Ìæ“¾
+            {   // è¨­å®šã®å–å¾—
                 _config.ImageType = Settings.Default.ImageType;
                 _config.Magnification = Settings.Default.ImageMagnification;
 
             }
 
             this.SetStyle(
-                ControlStyles.DoubleBuffer |         // •`‰æ‚ğƒoƒbƒtƒ@‚ÅÀs‚·‚é
-                ControlStyles.UserPaint |            // •`‰æ‚ÍiOS‚Å‚È‚­j“Æ©‚És‚¤
-                ControlStyles.AllPaintingInWmPaint,  // WM_ERASEBKGND ‚ğ–³‹‚·‚é
-                true                                 // w’è‚µ‚½ƒXƒ^ƒCƒ‹‚ğ“K—p‚·‚é
+                ControlStyles.DoubleBuffer |         // æç”»ã‚’ãƒãƒƒãƒ•ã‚¡ã§å®Ÿè¡Œã™ã‚‹
+                ControlStyles.UserPaint |            // æç”»ã¯ï¼ˆOSã§ãªãï¼‰ç‹¬è‡ªã«è¡Œã†
+                ControlStyles.AllPaintingInWmPaint,  // WM_ERASEBKGND ã‚’ç„¡è¦–ã™ã‚‹
+                true                                 // æŒ‡å®šã—ãŸã‚¹ã‚¿ã‚¤ãƒ«ã‚’é©ç”¨ã™ã‚‹
                 );
         }
 
-        #endregion ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+        #endregion ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 
-        #region ƒtƒH[ƒ€‚ÌƒCƒxƒ“ƒgƒnƒ“ƒhƒ‰
+        #region ãƒ•ã‚©ãƒ¼ãƒ ã®ã‚¤ãƒ™ãƒ³ãƒˆãƒãƒ³ãƒ‰ãƒ©
 
         #region MainForm_Shown
 
         /// <summary>
-        /// ƒtƒH[ƒ€‚ª‰‚ß‚Ä•\¦‚³‚ê‚½‚ÉŒÄ‚Î‚ê‚Ü‚·B
+        /// ãƒ•ã‚©ãƒ¼ãƒ ãŒåˆã‚ã¦è¡¨ç¤ºã•ã‚ŒãŸæ™‚ã«å‘¼ã°ã‚Œã¾ã™ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         void MainForm_Shown(object sender, EventArgs e) {
-            // ‰æ–Ê‘S‘Ì‚ğƒLƒƒƒvƒ`ƒƒ‚·‚é
+            // ç”»é¢å…¨ä½“ã‚’ã‚­ãƒ£ãƒ—ãƒãƒ£ã™ã‚‹
             this.Hide();
             System.Threading.Thread.Sleep(200);
             this.BackgroundImage = this.GetCaptureImage(new Rectangle(this.Location, this.Size));
             this.Show();
 
-            // TODO:ƒJ[ƒ\ƒ‹‚ªŒ³‚É–ß‚Á‚Ä‚µ‚Ü‚¤
+            // TODO:ã‚«ãƒ¼ã‚½ãƒ«ãŒå…ƒã«æˆ»ã£ã¦ã—ã¾ã†
             Cursor.Current = Cursors.Cross;
         }
 
@@ -85,7 +85,7 @@ namespace TinyDesktopCapture {
         #region MainForm_KeyDown
 
         /// <summary>
-        /// ƒL[‚ª‰Ÿ‚³‚ê‚½‚ÉŒÄ‚Î‚ê‚Ü‚·B
+        /// ã‚­ãƒ¼ãŒæŠ¼ã•ã‚ŒãŸæ™‚ã«å‘¼ã°ã‚Œã¾ã™ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -101,12 +101,12 @@ namespace TinyDesktopCapture {
         #region MainForm_MouseUp
 
         /// <summary>
-        /// ƒ}ƒEƒXƒNƒŠƒbƒNI—¹‚ÉŒÄ‚Î‚ê‚Ü‚·B
+        /// ãƒã‚¦ã‚¹ã‚¯ãƒªãƒƒã‚¯çµ‚äº†æ™‚ã«å‘¼ã°ã‚Œã¾ã™ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         void MainForm_MouseUp(object sender, MouseEventArgs e) {
-            // ‘I‘ğ”ÍˆÍƒhƒ‰ƒbƒOI—¹
+            // é¸æŠç¯„å›²ãƒ‰ãƒ©ãƒƒã‚°çµ‚äº†
             Cursor.Current = Cursors.Default;
 
             _mouseInfo.EndDrag();
@@ -117,20 +117,20 @@ namespace TinyDesktopCapture {
         #region MainForm_MouseMove
 
         /// <summary>
-        /// ƒ}ƒEƒXƒJ[ƒ\ƒ‹ˆÚ“®š‚ÉŒÄ‚Î‚ê‚Ü‚·B
+        /// ãƒã‚¦ã‚¹ã‚«ãƒ¼ã‚½ãƒ«ç§»å‹•å­—ã«å‘¼ã°ã‚Œã¾ã™ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         void MainForm_MouseMove(object sender, MouseEventArgs e) {
 
-            // ƒhƒ‰ƒbƒOŠJn‘O‚Í\š‚É‚·‚é
+            // ãƒ‰ãƒ©ãƒƒã‚°é–‹å§‹å‰ã¯åå­—ã«ã™ã‚‹
             if (_mouseInfo.Status == MouseDragInfo.DragStaus.Off)
             {
                 this.Refresh();
                 DrawCross(e.Location);
             } else if (_mouseInfo.Status == MouseDragInfo.DragStaus.On)
             {
-                // ‘I‘ğ”ÍˆÍ‚ğ•`‰æ‚·‚é
+                // é¸æŠç¯„å›²ã‚’æç”»ã™ã‚‹
                 _mouseInfo.CalcDragRectangle(e.Location);
 
                 this.Refresh();
@@ -139,9 +139,9 @@ namespace TinyDesktopCapture {
         }
 
         /// <summary>
-        /// w’è‚³‚ê‚½ˆÊ’u‚ğ’†S‚É‚µ‚½\š‚ğ•`‰æ‚µ‚Ü‚·B
+        /// æŒ‡å®šã•ã‚ŒãŸä½ç½®ã‚’ä¸­å¿ƒã«ã—ãŸåå­—ã‚’æç”»ã—ã¾ã™ã€‚
         /// </summary>
-        /// <param name="centerPoint">’†S‚ÌˆÊ’u</param>
+        /// <param name="centerPoint">ä¸­å¿ƒã®ä½ç½®</param>
         private void DrawCross(Point centerPoint) {
             using (Graphics g = this.CreateGraphics())
             {
@@ -150,7 +150,7 @@ namespace TinyDesktopCapture {
 
                 Rectangle rect = Screen.PrimaryScreen.WorkingArea;
 
-                // …•½ü
+                // æ°´å¹³ç·š
                 g.DrawLine(
                     Pens.Red,
                     rect.Left,
@@ -158,7 +158,7 @@ namespace TinyDesktopCapture {
                     rect.Right,
                     centerPoint.Y);
 
-                // ‚’¼ü
+                // å‚ç›´ç·š
                 g.DrawLine(
                     Pens.Red,
                     centerPoint.X,
@@ -169,7 +169,7 @@ namespace TinyDesktopCapture {
         }
 
         /// <summary>
-        /// ‘I‘ğ”ÍˆÍ‚ğ•`‰æ‚µ‚Ü‚·B
+        /// é¸æŠç¯„å›²ã‚’æç”»ã—ã¾ã™ã€‚
         /// </summary>
         /// <param name="rect"></param>
         private void DrawSelectedArea(Rectangle rect) {
@@ -181,12 +181,12 @@ namespace TinyDesktopCapture {
 
         #endregion MainForm_MouseMove
 
-        #endregion ƒtƒH[ƒ€‚ÌƒCƒxƒ“ƒgƒnƒ“ƒhƒ‰
+        #endregion ãƒ•ã‚©ãƒ¼ãƒ ã®ã‚¤ãƒ™ãƒ³ãƒˆãƒãƒ³ãƒ‰ãƒ©
 
         #region MouseDownEventHandler
 
         /// <summary>
-        /// ƒ}ƒEƒX‚ªƒNƒŠƒbƒN‚³‚ê‚½‚ÉŒÄ‚Î‚ê‚Ü‚·B
+        /// ãƒã‚¦ã‚¹ãŒã‚¯ãƒªãƒƒã‚¯ã•ã‚ŒãŸæ™‚ã«å‘¼ã°ã‚Œã¾ã™ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -199,12 +199,12 @@ namespace TinyDesktopCapture {
 
             if (_mouseInfo.Status == MouseDragInfo.DragStaus.Off)
             {
-                // ƒhƒ‰ƒbƒOŠJn
+                // ãƒ‰ãƒ©ãƒƒã‚°é–‹å§‹
                 _mouseInfo.BeginDrag(e.Location);
 
             } else if (_mouseInfo.Status == MouseDragInfo.DragStaus.Complete)
             {
-                // TODO: ƒNƒŠƒbƒvƒ{[ƒh‚Éæ‚è‚Ş
+                // TODO: ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«å–ã‚Šè¾¼ã‚€
                 //SetImageToClip();
                 //this.Close();
             }
@@ -213,20 +213,20 @@ namespace TinyDesktopCapture {
         #region SetImageToClip
 
         /// <summary>
-        /// ‘I‘ğ”ÍˆÍ‚ÌƒCƒ[ƒW‚ğ‚ğƒNƒŠƒbƒvƒ{[ƒh‚ÉƒRƒs[‚µ‚Ü‚·B
+        /// é¸æŠç¯„å›²ã®ã‚¤ãƒ¡ãƒ¼ã‚¸ã‚’ã‚’ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«ã‚³ãƒ”ãƒ¼ã—ã¾ã™ã€‚
         /// </summary>
         private void SetImageToClip() {
-            // Ô˜g‚ğÁ‚·
+            // èµ¤æ ã‚’æ¶ˆã™
             this.Refresh();
 
-            // ‘I‘ğ”ÍˆÍ‚ğƒNƒŠƒbƒvƒ{[ƒh‚ÉƒRƒs[
+            // é¸æŠç¯„å›²ã‚’ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«ã‚³ãƒ”ãƒ¼
             Image img = GetCaptureImage(_mouseInfo.DragRectangle);
 
-            // ”{—¦‚ğ•ÏX
+            // å€ç‡ã‚’å¤‰æ›´
             Image newImg = MagnifyImage(img, _config.Magnification);
             img.Dispose();
 
-            // ‰æ‘œŒ`®‚ğ•ÏŠ·
+            // ç”»åƒå½¢å¼ã‚’å¤‰æ›
             Image newImg2 = ConvertImage(newImg);
             newImg.Dispose();
 
@@ -238,14 +238,14 @@ namespace TinyDesktopCapture {
         #endregion MouseDownEventHandler
 
 
-        #region ƒRƒ“ƒeƒLƒXƒgƒƒjƒ…[
+        #region ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆãƒ¡ãƒ‹ãƒ¥ãƒ¼
 
         /// <summary>
-        /// İ’èƒƒjƒ…[‚ªƒNƒŠƒbƒN‚³‚ê‚½‚ÉŒÄ‚Î‚ê‚Ü‚·B
+        /// è¨­å®šãƒ¡ãƒ‹ãƒ¥ãƒ¼ãŒã‚¯ãƒªãƒƒã‚¯ã•ã‚ŒãŸæ™‚ã«å‘¼ã°ã‚Œã¾ã™ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void İ’èToolStripMenuItem_Click(object sender, EventArgs e) {
+        void è¨­å®šToolStripMenuItem_Click(object sender, EventArgs e) {
             using (ConfigForm frm = new ConfigForm())
             {
                 frm.ShowDialog(this);
@@ -260,22 +260,22 @@ namespace TinyDesktopCapture {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         void CopyToClipboardToolStripMenuItem_Click(object sender, EventArgs e) {
-            // ƒNƒŠƒbƒvƒ{[ƒh‚Éæ‚è‚Ş
+            // ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«å–ã‚Šè¾¼ã‚€
             SetImageToClip();
             this.Close();
         }
 
-        #endregion ƒRƒ“ƒeƒLƒXƒgƒƒjƒ…[
+        #endregion ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆãƒ¡ãƒ‹ãƒ¥ãƒ¼
 
-        #region ‰æ‘œˆ—
+        #region ç”»åƒå‡¦ç†
 
         #region ConvertImage
 
         /// <summary>
-        /// ‰æ‘œ‚ÌŒ`®‚ğ•ÏŠ·‚µ‚Ü‚·B
+        /// ç”»åƒã®å½¢å¼ã‚’å¤‰æ›ã—ã¾ã™ã€‚
         /// </summary>
-        /// <param name="source">•ÏŠ·‚·‚é‰æ‘œ</param>
-        /// <returns>•ÏŠ·‚³‚ê‚½‰æ‘œ</returns>
+        /// <param name="source">å¤‰æ›ã™ã‚‹ç”»åƒ</param>
+        /// <returns>å¤‰æ›ã•ã‚ŒãŸç”»åƒ</returns>
         private Image ConvertImage(Image source) {
 
             ImageFormat format;
@@ -307,10 +307,10 @@ namespace TinyDesktopCapture {
         #region GetCaptureImage
 
         /// <summary>
-        /// w’è”ÍˆÍ‚ğƒLƒƒƒvƒ`ƒƒ‚µ‚½‰æ‘œ‚ğæ“¾‚µ‚Ü‚·B
+        /// æŒ‡å®šç¯„å›²ã‚’ã‚­ãƒ£ãƒ—ãƒãƒ£ã—ãŸç”»åƒã‚’å–å¾—ã—ã¾ã™ã€‚
         /// </summary>
-        /// <param name="rect">ƒLƒƒƒvƒ`ƒƒ‚·‚é”ÍˆÍ</param>
-        /// <returns>‰æ‘œ</returns>
+        /// <param name="rect">ã‚­ãƒ£ãƒ—ãƒãƒ£ã™ã‚‹ç¯„å›²</param>
+        /// <returns>ç”»åƒ</returns>
         private System.Drawing.Image GetCaptureImage(System.Drawing.Rectangle rect) {
             System.Drawing.Image img = new System.Drawing.Bitmap(
                                             rect.Width,
@@ -334,14 +334,14 @@ namespace TinyDesktopCapture {
         #endregion GetCaptureImage
 
         /// <summary>
-        /// ‰æ‘œ‚Ì”{—¦‚ğ•ÏX‚µ‚Ü‚·B
+        /// ç”»åƒã®å€ç‡ã‚’å¤‰æ›´ã—ã¾ã™ã€‚
         /// </summary>
-        /// <param name="img">‰æ‘œ</param>
-        /// <param name="magnification">”{—¦</param>
-        /// <returns>•ÏX‚³‚ê‚½‰æ‘œ</returns>
+        /// <param name="img">ç”»åƒ</param>
+        /// <param name="magnification">å€ç‡</param>
+        /// <returns>å¤‰æ›´ã•ã‚ŒãŸç”»åƒ</returns>
         private Image MagnifyImage(Image img, decimal magnification) {
 
-            // TODO:ƒŠƒtƒ@ƒNƒ^‚·‚é
+            // TODO:ãƒªãƒ•ã‚¡ã‚¯ã‚¿ã™ã‚‹
             float fMagnification = (float)(magnification / 100);
 
             Bitmap newImg = new Bitmap((int)(img.Width * fMagnification), (int)(img.Height * fMagnification));
@@ -356,26 +356,26 @@ namespace TinyDesktopCapture {
             return newImg;
         }
 
-        #endregion ‰æ‘œˆ—
+        #endregion ç”»åƒå‡¦ç†
 
-        #region ƒCƒ“ƒi[ƒNƒ‰ƒX
+        #region ã‚¤ãƒ³ãƒŠãƒ¼ã‚¯ãƒ©ã‚¹
 
         /// <summary>
-        /// İ’è
+        /// è¨­å®š
         /// </summary>
         private class Config {
 
             /// <summary>
-            /// ‰æ‘œ‚ÌŒ`®
+            /// ç”»åƒã®å½¢å¼
             /// </summary>
             public string ImageType;
 
             /// <summary>
-            /// ‰æ‘œ‚Ì”{—¦
+            /// ç”»åƒã®å€ç‡
             /// </summary>
             public decimal Magnification;
         }
 
-        #endregion ƒCƒ“ƒi[ƒNƒ‰ƒX
+        #endregion ã‚¤ãƒ³ãƒŠãƒ¼ã‚¯ãƒ©ã‚¹
     }
 }
