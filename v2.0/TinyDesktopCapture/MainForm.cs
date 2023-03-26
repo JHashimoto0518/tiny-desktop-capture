@@ -359,7 +359,7 @@ namespace TinyDesktopCapture {
         #endregion 画像処理
 
         #region インナークラス
-        
+
         /// <summary>
         /// 設定
         /// </summary>
@@ -368,16 +368,15 @@ namespace TinyDesktopCapture {
             /// <summary>
             /// 画像の形式
             /// </summary>
-            public string ImageType;
+            public string ImageType { get; set; }
 
             /// <summary>
             /// 画像の倍率
             /// </summary>
-            public decimal Magnification;
+            public decimal Magnification { get; set; }
         }
 
         #endregion インナークラス
-
 
     }
 }
