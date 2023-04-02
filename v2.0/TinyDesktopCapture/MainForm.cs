@@ -32,7 +32,6 @@ namespace TinyDesktopCapture {
                 this.WindowState = FormWindowState.Maximized;
                 this.KeyPreview = true;
 
-                this.Shown += new EventHandler(MainForm_Shown);
                 this.KeyDown += new KeyEventHandler(MainForm_KeyDown);
                 this.MouseDown += new MouseEventHandler(MouseDownEventHandler);
                 this.MouseUp += new MouseEventHandler(MainForm_MouseUp);
@@ -56,31 +55,19 @@ namespace TinyDesktopCapture {
                 ControlStyles.AllPaintingInWmPaint,  // WM_ERASEBKGND を無視する
                 true                                 // 指定したスタイルを適用する
                 );
+
+            // get desktop size
+            var currentScreen = Screen.FromControl(this);
+            var location = new Point(currentScreen.Bounds.X, currentScreen.Bounds.Y);
+            var desktop = new Rectangle(location, currentScreen.Bounds.Size);
+
+            // 画面全体をキャプチャする
+            this.BackgroundImage = this.GetCaptureImage(desktop);
         }
 
         #endregion コンストラクタ
 
         #region フォームのイベントハンドラ
-
-        #region MainForm_Shown
-
-        /// <summary>
-        /// フォームが初めて表示された時に呼ばれます。
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void MainForm_Shown(object sender, EventArgs e) {
-            // 画面全体をキャプチャする
-            this.Hide();
-            System.Threading.Thread.Sleep(200);
-            this.BackgroundImage = this.GetCaptureImage(new Rectangle(this.Location, this.Size));
-            this.Show();
-
-            // TODO:カーソルが元に戻ってしまう
-            Cursor.Current = Cursors.Cross;
-        }
-
-        #endregion MainForm_Shown
 
         #region MainForm_KeyDown
 
