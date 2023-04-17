@@ -7,4 +7,11 @@ This is a simple screen capture for a study of desktop applications, created whe
 # Purpose
 I use this repository for my refactoring exercises and NDepend explorations.
 
-[リファクタリングによる技術的負債の返済をNDependで可視化してみた - Qiita](https://qiita.com/JHashimoto/items/1cde008689c0446be780)
+# Articles
+## English
+
+- [Visualizing Technical Debt Repayment through Refactoring with NDepend | by jhashimoto | Apr, 2023 | Medium](https://jhashimoto0518.medium.com/visualizing-technical-debt-repayment-through-refactoring-with-ndepend-d9c0ba8fe7a0)
+
+## Japanese
+
+- [リファクタリングによる技術的負債の返済をNDependで可視化してみた - Qiita](https://qiita.com/JHashimoto/items/1cde008689c0446be780)
