@@ -41,6 +41,7 @@ namespace TinyDesktopCapture {
             {   // コンテキストメニュー
                 this.設定ToolStripMenuItem.Click += new EventHandler(設定ToolStripMenuItem_Click);
                 this.CopyToClipboardToolStripMenuItem.Click += new EventHandler(CopyToClipboardToolStripMenuItem_Click);
+                this.FixOnDesktopToolStripMenuItem.Click += new EventHandler(FixOnDesktopToolStripMenuItem_Click);
             }
 
             {   // 設定の取得
@@ -250,6 +251,19 @@ namespace TinyDesktopCapture {
             // クリップボードに取り込む
             SetImageToClip();
             this.Close();
+        }
+
+        private void FixOnDesktopToolStripMenuItem_Click(object? sender, EventArgs e) {
+            // erase red frame
+            this.Refresh();
+
+            this.Text = "Sticky Note";
+            this.FormBorderStyle = FormBorderStyle.Sizable;
+            this.MaximizeBox = false;
+            this.WindowState = FormWindowState.Normal;
+
+            this.BackgroundImage = GetCaptureImage(_mouseInfo.DragRectangle);
+            this.Size = _mouseInfo.DragRectangle.Size;
         }
 
         #endregion コンテキストメニュー

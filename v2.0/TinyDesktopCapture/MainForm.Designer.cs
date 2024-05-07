@@ -24,46 +24,48 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            //this.components = new System.ComponentModel.Container();
-            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            //this.ClientSize = new System.Drawing.Size(800, 450);
-            //this.Text = "Form1";
-
-            this.components = new System.ComponentModel.Container();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CopyToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1.SuspendLayout();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            CopyToClipboardToolStripMenuItem = new ToolStripMenuItem();
+            設定ToolStripMenuItem = new ToolStripMenuItem();
+            FixOnDesktopToolStripMenuItem = new ToolStripMenuItem();
+            contextMenuStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // contextMenuStrip1
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CopyToClipboardToolStripMenuItem,
-            this.設定ToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(167, 70);
-            // 
-            // 設定ToolStripMenuItem
-            // 
-            this.設定ToolStripMenuItem.Name = "設定ToolStripMenuItem";
-            this.設定ToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.設定ToolStripMenuItem.Text = "設定";
+            contextMenuStrip1.ImageScalingSize = new Size(24, 24);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { FixOnDesktopToolStripMenuItem, CopyToClipboardToolStripMenuItem, 設定ToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(241, 133);
             // 
             // CopyToClipboardToolStripMenuItem
             // 
-            this.CopyToClipboardToolStripMenuItem.Name = "CopyToClipboardToolStripMenuItem";
-            this.CopyToClipboardToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.CopyToClipboardToolStripMenuItem.Text = "クリップボードにコピー";
+            CopyToClipboardToolStripMenuItem.Name = "CopyToClipboardToolStripMenuItem";
+            CopyToClipboardToolStripMenuItem.Size = new Size(240, 32);
+            CopyToClipboardToolStripMenuItem.Text = "クリップボードにコピー";
+            // 
+            // 設定ToolStripMenuItem
+            // 
+            設定ToolStripMenuItem.Name = "設定ToolStripMenuItem";
+            設定ToolStripMenuItem.Size = new Size(240, 32);
+            設定ToolStripMenuItem.Text = "設定";
+            // 
+            // FixOnDesktopToolStripMenuItem
+            // 
+            FixOnDesktopToolStripMenuItem.Name = "FixOnDesktopToolStripMenuItem";
+            FixOnDesktopToolStripMenuItem.Size = new Size(240, 32);
+            FixOnDesktopToolStripMenuItem.Text = "デスクトップに固定";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(257, 247);
-            this.Name = "MainForm";
-            this.contextMenuStrip1.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(428, 515);
+            Margin = new Padding(5, 6, 5, 6);
+            Name = "MainForm";
+            contextMenuStrip1.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
 
@@ -72,6 +74,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 設定ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CopyToClipboardToolStripMenuItem;
-
+        private ToolStripMenuItem FixOnDesktopToolStripMenuItem;
     }
 }
