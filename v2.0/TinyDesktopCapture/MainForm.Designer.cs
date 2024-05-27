@@ -26,9 +26,9 @@
         private void InitializeComponent() {
             components = new System.ComponentModel.Container();
             contextMenuStrip1 = new ContextMenuStrip(components);
+            FixOnDesktopToolStripMenuItem = new ToolStripMenuItem();
             CopyToClipboardToolStripMenuItem = new ToolStripMenuItem();
             設定ToolStripMenuItem = new ToolStripMenuItem();
-            FixOnDesktopToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -37,25 +37,25 @@
             contextMenuStrip1.ImageScalingSize = new Size(24, 24);
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { FixOnDesktopToolStripMenuItem, CopyToClipboardToolStripMenuItem, 設定ToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(241, 133);
+            contextMenuStrip1.Size = new Size(229, 100);
+            // 
+            // FixOnDesktopToolStripMenuItem
+            // 
+            FixOnDesktopToolStripMenuItem.Name = "FixOnDesktopToolStripMenuItem";
+            FixOnDesktopToolStripMenuItem.Size = new Size(228, 32);
+            FixOnDesktopToolStripMenuItem.Text = "デスクトップに固定";
             // 
             // CopyToClipboardToolStripMenuItem
             // 
             CopyToClipboardToolStripMenuItem.Name = "CopyToClipboardToolStripMenuItem";
-            CopyToClipboardToolStripMenuItem.Size = new Size(240, 32);
+            CopyToClipboardToolStripMenuItem.Size = new Size(228, 32);
             CopyToClipboardToolStripMenuItem.Text = "クリップボードにコピー";
             // 
             // 設定ToolStripMenuItem
             // 
             設定ToolStripMenuItem.Name = "設定ToolStripMenuItem";
-            設定ToolStripMenuItem.Size = new Size(240, 32);
+            設定ToolStripMenuItem.Size = new Size(228, 32);
             設定ToolStripMenuItem.Text = "設定";
-            // 
-            // FixOnDesktopToolStripMenuItem
-            // 
-            FixOnDesktopToolStripMenuItem.Name = "FixOnDesktopToolStripMenuItem";
-            FixOnDesktopToolStripMenuItem.Size = new Size(240, 32);
-            FixOnDesktopToolStripMenuItem.Text = "デスクトップに固定";
             // 
             // MainForm
             // 
