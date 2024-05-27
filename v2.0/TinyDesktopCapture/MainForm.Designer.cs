@@ -64,6 +64,7 @@
             ClientSize = new Size(428, 515);
             Margin = new Padding(5, 6, 5, 6);
             Name = "MainForm";
+            TopMost = true;
             contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
         }
