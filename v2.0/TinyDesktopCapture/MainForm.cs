@@ -39,7 +39,7 @@ namespace TinyDesktopCapture {
             }
 
             {   // コンテキストメニュー
-                this.設定ToolStripMenuItem.Click += new EventHandler(設定ToolStripMenuItem_Click);
+                this.ConfigureToolStripMenuItem.Click += new EventHandler(ConfigureToolStripMenuItem_Click);
                 this.CopyToClipboardToolStripMenuItem.Click += new EventHandler(CopyToClipboardToolStripMenuItem_Click);
                 this.FixOnDesktopToolStripMenuItem.Click += new EventHandler(FixOnDesktopToolStripMenuItem_Click);
             }
@@ -233,7 +233,7 @@ namespace TinyDesktopCapture {
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void 設定ToolStripMenuItem_Click(object sender, EventArgs e) {
+        void ConfigureToolStripMenuItem_Click(object sender, EventArgs e) {
             using (ConfigForm frm = new ConfigForm())
             {
                 frm.ShowDialog(this);

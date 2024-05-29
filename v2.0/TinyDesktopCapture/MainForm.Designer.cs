@@ -28,14 +28,14 @@
             contextMenuStrip1 = new ContextMenuStrip(components);
             FixOnDesktopToolStripMenuItem = new ToolStripMenuItem();
             CopyToClipboardToolStripMenuItem = new ToolStripMenuItem();
-            設定ToolStripMenuItem = new ToolStripMenuItem();
+            ConfigureToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // contextMenuStrip1
             // 
             contextMenuStrip1.ImageScalingSize = new Size(24, 24);
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { FixOnDesktopToolStripMenuItem, CopyToClipboardToolStripMenuItem, 設定ToolStripMenuItem });
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { FixOnDesktopToolStripMenuItem, CopyToClipboardToolStripMenuItem, ConfigureToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(229, 100);
             // 
@@ -53,9 +53,9 @@
             // 
             // 設定ToolStripMenuItem
             // 
-            設定ToolStripMenuItem.Name = "設定ToolStripMenuItem";
-            設定ToolStripMenuItem.Size = new Size(228, 32);
-            設定ToolStripMenuItem.Text = "設定";
+            ConfigureToolStripMenuItem.Name = "設定ToolStripMenuItem";
+            ConfigureToolStripMenuItem.Size = new Size(228, 32);
+            ConfigureToolStripMenuItem.Text = "設定";
             // 
             // MainForm
             // 
@@ -73,7 +73,7 @@
         #endregion
 
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem 設定ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ConfigureToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CopyToClipboardToolStripMenuItem;
         private ToolStripMenuItem FixOnDesktopToolStripMenuItem;
     }
