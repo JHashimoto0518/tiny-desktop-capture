@@ -51,9 +51,9 @@
             CopyToClipboardToolStripMenuItem.Size = new Size(228, 32);
             CopyToClipboardToolStripMenuItem.Text = "クリップボードにコピー";
             // 
-            // 設定ToolStripMenuItem
+            // ConfigureToolStripMenuItem
             // 
-            ConfigureToolStripMenuItem.Name = "設定ToolStripMenuItem";
+            ConfigureToolStripMenuItem.Name = "ConfigureToolStripMenuItem";
             ConfigureToolStripMenuItem.Size = new Size(228, 32);
             ConfigureToolStripMenuItem.Text = "設定";
             // 
@@ -62,6 +62,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(428, 515);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5, 6, 5, 6);
             Name = "MainForm";
             TopMost = true;

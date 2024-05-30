@@ -64,6 +64,12 @@ namespace TinyDesktopCapture {
 
             // 画面全体をキャプチャする
             this.BackgroundImage = this.GetCaptureImage(desktop);
+
+            this.MaximizeBox = false;
+            this.ControlBox = false;
+            this.Text = string.Empty;
+
+            new DraggableExtender(this);
         }
 
         #endregion コンストラクタ
@@ -257,11 +263,10 @@ namespace TinyDesktopCapture {
             // erase red frame
             this.Refresh();
 
-            this.Text = "Sticky Note";
-            this.FormBorderStyle = FormBorderStyle.Sizable;
-            this.MaximizeBox = false;
+            // cancel maximize
             this.WindowState = FormWindowState.Normal;
 
+            // the image dragged in desktop to background
             this.BackgroundImage = GetCaptureImage(_mouseInfo.DragRectangle);
             this.Size = _mouseInfo.DragRectangle.Size;
         }
